@@ -3,6 +3,15 @@
 #ifndef USART_H
 #define USART_H
 
+#include <stdint.h>
+
+// Define register pointers based on your microcontroller
+volatile uint8_t* const USART_UDR = (volatile uint8_t*) 0xUDR_ADDRESS; // Replace with actual UDR register address
+volatile uint8_t* const USART_UCSRA = (volatile uint8_t*) 0xUCSRA_ADDRESS; // Replace with actual UCSRA register address
+volatile uint8_t* const USART_UCSRB = (volatile uint8_t*) 0xUCSRB_ADDRESS; // Replace with actual UCSRB register address
+volatile uint8_t* const USART_UCSRC = (volatile uint8_t*) 0xUCSRC_ADDRESS; // Replace with actual UCSRC register address
+volatile uint16_t* const USART_UBRR = (volatile uint16_t*) 0xUBRR_ADDRESS; // Replace with actual UBRR register address
+
 void USART_begin(uint32_t baudRate);
 int USART_available(void);
 uint8_t USART_read(void);
